@@ -4,9 +4,13 @@ simple event emitter and pubsub
 var bus = require('bus')
 var buser = bus()
 
+// listen event
 buser.on('event',callback)
+// listen event once
 buser.once('event',callback)
-buser.emit('event',callback)
+// trigger event with arguments
+buser.emit('event',arg)
+// remove listen
 buser.off('event',callback)
 
 ```
@@ -25,7 +29,7 @@ var human = new People()
 
 human.on('event',callback)
 human.once('event',callback)
-human.emit('event',callback)
+human.emit('event',arg)
 human.off('event',callback)
 
 ```
