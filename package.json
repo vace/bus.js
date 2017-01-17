@@ -8,7 +8,7 @@
     "type": "git"
   },
   "scripts": {
-    "product":"npm run bus && npm run umd && npm run amd",
+    "product": "npm run bus && npm run umd && npm run amd",
     "bus": "babel src/index.js -o dist/bus.js",
     "umd": "webpack dist/bus.js dist/bus.umd.js --output-library bus --output-library-target umd -p",
     "amd": "webpack dist/bus.js dist/bus.amd.js --output-library bus --output-library-target commonjs -p"
