@@ -1,0 +1,28 @@
+{
+  "name": "bus.js",
+  "version": "1.0.0",
+  "description": "simple event emitter and pubsub",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:vace/bus.js.git",
+    "type": "git"
+  },
+  "scripts": {
+    "product":"npm run bus && npm run umd && npm run amd",
+    "bus": "babel src/index.js -o dist/bus.js",
+    "umd": "webpack dist/bus.js dist/bus.umd.js --output-library bus --output-library-target umd -p",
+    "amd": "webpack dist/bus.js dist/bus.amd.js --output-library bus --output-library-target commonjs -p"
+  },
+  "author": "Vace <ocdo@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2",
+    "should-sinon": "^0.0.5",
+    "sinon": "^1.17.7",
+    "webpack": "^1.12.0"
+  }
+}
