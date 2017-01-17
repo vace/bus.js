@@ -13,7 +13,7 @@ buser.off('event',callback)
 
 
 
-``javascript
+```javascript
 var bus = require('bus')
 
 function People(){
