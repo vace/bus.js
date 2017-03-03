@@ -17,12 +17,22 @@ module.exports = function bus(_this) {
       map.off(type, _handle)
     }
     return map.on(type, _handle)
-}
+  }
 
   map.off = (type, handler) => {
-    var arr = make(type),
-        index = arr.indexOf(handler)
-    index !== -1 && arr.splice(index, 1)
+    var arr = events[ type ]
+    // clear all events
+    if(type === '*'){
+      events = Object.create(null)
+    // empty events
+    }else if(!handler || !arr || !arr.length){
+
+    }else{
+      var index = arr.indexOf(handler)
+      if(index !== -1){
+        arr.splice(index, 1)
+      }
+    }
     return map
   }
 
